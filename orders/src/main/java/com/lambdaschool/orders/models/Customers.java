@@ -1,6 +1,5 @@
 package com.lambdaschool.orders.models;
 
-import org.aspectj.weaver.loadtime.Agent;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,9 +10,10 @@ import java.util.List;
 public class Customers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long custcode;
+    private long custcode;
 
-    @Column(nullable=false)
+    @Column(unique = true,
+            nullable=false)
     private String custname;
 
     private String custcity;
@@ -33,7 +33,8 @@ public class Customers {
     private Agents agent;
 
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer",
+               cascade = CascadeType.ALL)
     private List<Orders> orders = new ArrayList<>();
 
     public Customers() {

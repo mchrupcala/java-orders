@@ -9,7 +9,7 @@ public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
-    private Long ordnum;
+    private long ordnum;
 
     private double ordamount;
     private double advanceamount;
