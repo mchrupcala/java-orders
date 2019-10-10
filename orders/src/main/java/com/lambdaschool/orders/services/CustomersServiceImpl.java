@@ -53,13 +53,14 @@ public class CustomersServiceImpl implements CustomersServices {
         return custrepos.save(newCustomer);
     }
 
-//    @Override
-//    public Customers update(Customers customer, long custcode) {
-//        return null;
-//    }
-//
-//    @Override
-//    public void deleteCustomer(long custcode) {
-//        return null;
-//    }
+    @Override
+    public Customers update(Customers customer, long custcode) {
+        // send in old & new data
+        return custrepos.save(customer);
+    }
+
+    @Override
+    public void deleteCustomer(long custcode) {
+        custrepos.deleteById(custcode);
+    }
 }

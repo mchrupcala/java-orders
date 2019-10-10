@@ -10,8 +10,8 @@ public interface CustomersServices {
 
     Customers save(Customers customer);
 
-//    Customers update(Customers customer,
-//                     long custcode);
+    Customers update(Customers customer,
+                     long custcode);
 
-//    void deleteCustomer(long custcode);
+    void deleteCustomer(long custcode);
 }
