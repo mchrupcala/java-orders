@@ -30,7 +30,7 @@ public class Customers {
     @JoinColumn(name="agentcode",
                 nullable=false)
     //because I still need to tie some field to 'agentcode'
-    private Agent agent;
+    private Agents agent;
 
 
     @OneToMany(mappedBy = "customer")

@@ -6,20 +6,12 @@ import java.util.List;
 
 public interface CustomersServices {
 
-    List<Customers> getAll(){
+    List<Customers> getAll();
 
-    };
-
-    Customers newCustomer(Customers customer){
-
-    };
+    Customers save(Customers customer);
 
     Customers update(Customers customer,
-                     long custcode){
+                     long id);
 
-    };
-
-    void deleteCustomer(long custcode){
-
-    };
+    void deleteCustomer(long id);
 }

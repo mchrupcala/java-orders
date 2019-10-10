@@ -5,10 +5,12 @@ import com.lambdaschool.orders.models.Orders;
 import com.lambdaschool.orders.repositories.CustomersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Transactional
 @Service(value="CustomersService")
 public class CustomersServiceImpl implements CustomersServices {
 
@@ -18,7 +20,7 @@ public class CustomersServiceImpl implements CustomersServices {
 
 
     @Override
-    List<Customers> getAll() {
+    public List<Customers> getAll() {
         List<Customers> rtnCustomers = new ArrayList<>();
                     custrepos.findAll()
                     .iterator()
@@ -26,8 +28,9 @@ public class CustomersServiceImpl implements CustomersServices {
              return rtnCustomers;
     }
 
+    @Transactional
     @Override
-    Customers save(Customers customer) {
+    public Customers save(Customers customer) {
         Customers newCustomer = new Customers();
 
         newCustomer.setCustname(customer.getCustname());
@@ -44,19 +47,19 @@ public class CustomersServiceImpl implements CustomersServices {
         for (Orders o : customer.getOrders()) {
             newCustomer.getOrders().add(new Orders(o.getOrdamount(),
                     o.getAdvanceamount(),
-                    o.getOrddescription(),
-                    newCustomer))
+                    newCustomer,
+                    o.getOrddescription()));
         }
-        return null;
+        return custrepos.save(newCustomer);
     }
 
-    @Override
-    Customers update(Customers customer, long custcode) {
-        return super.update(customer, custcode);
-    }
-
-    @Override
-    void deleteCustomer(long custcode) {
-        super.deleteCustomer(custcode);
-    }
+//    @Override
+//    public Customers update(Customers customer, long custcode) {
+//        return null;
+//    }
+//
+//    @Override
+//    public void deleteCustomer(long custcode) {
+//        return null;
+//    }
 }

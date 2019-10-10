@@ -24,7 +24,7 @@ public class CustomersController {
     produces = {"application/json"})
 
     public ResponseEntity<?> getAllCustomers(){
-    List<Customers> newList = CustomersService.getAll()
+    List<Customers> newList = CustomersService.getAll();
             return new ResponseEntity<>(newList, HttpStatus.OK);
     }
 

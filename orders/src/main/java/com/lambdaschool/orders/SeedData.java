@@ -80,18 +80,18 @@ public class SeedData implements CommandLineRunner
         Orders o11 = new Orders(1500.00, 600.00, c08, "SOD");
         Orders o12 = new Orders(2500.00, 400.00, c25, "SOD");
 
-        agentrepos.save(a01);
-        agentrepos.save(a02);
-        agentrepos.save(a03);
-        agentrepos.save(a04);
-        agentrepos.save(a05);
-        agentrepos.save(a06);
-        agentrepos.save(a07);
-        agentrepos.save(a08);
-        agentrepos.save(a09);
-        agentrepos.save(a10);
-        agentrepos.save(a11);
-        agentrepos.save(a12);
+//        agentrepos.save(a01);
+//        agentrepos.save(a02);
+//        agentrepos.save(a03);
+//        agentrepos.save(a04);
+//        agentrepos.save(a05);
+//        agentrepos.save(a06);
+//        agentrepos.save(a07);
+//        agentrepos.save(a08);
+//        agentrepos.save(a09);
+//        agentrepos.save(a10);
+//        agentrepos.save(a11);
+//        agentrepos.save(a12);
 
         custrepos.save(c01);
         custrepos.save(c02);
@@ -118,18 +118,18 @@ public class SeedData implements CommandLineRunner
         custrepos.save(c23);
         custrepos.save(c24);
         custrepos.save(c25);
-
-        ordersrepos.save(o01);
-        ordersrepos.save(o02);
-        ordersrepos.save(o03);
-        ordersrepos.save(o04);
-        ordersrepos.save(o05);
-        ordersrepos.save(o06);
-        ordersrepos.save(o07);
-        ordersrepos.save(o08);
-        ordersrepos.save(o09);
-        ordersrepos.save(o10);
-        ordersrepos.save(o11);
-        ordersrepos.save(o12);
+//
+//        ordersrepos.save(o01);
+//        ordersrepos.save(o02);
+//        ordersrepos.save(o03);
+//        ordersrepos.save(o04);
+//        ordersrepos.save(o05);
+//        ordersrepos.save(o06);
+//        ordersrepos.save(o07);
+//        ordersrepos.save(o08);
+//        ordersrepos.save(o09);
+//        ordersrepos.save(o10);
+//        ordersrepos.save(o11);
+//        ordersrepos.save(o12);
     }
 }
